@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 import "./Button.css";
 
-
 function Button() {
-  const [name, setName] = useState("");
+  const [name, setName] = useState(false);
 
   const disName = () => {
-    setName("Pushkar");
+    setName(!name);
   };
 
   return (
     <div>
       <button className="btn" onClick={disName}>
-        Click Here!
+      {name ? "Hide Pushkar" : "Show Pushkar"}
       </button>
-      <p>{name}</p>
+      {name && <p>Pushkar</p>}
     </div>
   );
 }
